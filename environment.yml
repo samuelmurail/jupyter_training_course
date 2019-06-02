@@ -1,13 +1,9 @@
 name:  rpbs-jupyterhub-course
 channels:
-  - r
   - conda-forge
   - anaconda
 dependencies:
   - python
-  - gcc
-  - gfortran_linux-64
-  - r-essentials
   - notebook
   - numpy
   - pandas
