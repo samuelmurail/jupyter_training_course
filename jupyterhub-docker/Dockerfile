@@ -25,5 +25,9 @@ RUN conda install \
   rpy2 \
   version_information \
   rise \
-  ipyleaflet && jupyter nbextension enable --py --sys-prefix ipyleaflet
+  ipyleaflet  \
+  tzlocal \
+  geopandas \
+  nglview \
+  && jupyter nbextension enable --py --sys-prefix ipyleaflet
   
