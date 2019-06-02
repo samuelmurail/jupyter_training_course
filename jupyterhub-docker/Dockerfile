@@ -24,5 +24,6 @@ RUN conda install \
   simplegeneric \
   rpy2 \
   version_information \
+  rise \
   ipyleaflet && jupyter nbextension enable --py --sys-prefix ipyleaflet
   

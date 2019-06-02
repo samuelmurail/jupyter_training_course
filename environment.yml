@@ -1,0 +1,24 @@
+name:  rpbs-jupyterhub-course
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python
+  - notebook
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - plotly
+  - bokeh
+  - requests
+  - scikit-learn
+  - qgrid
+  - vega
+  - networkx
+  - simplegeneric
+  - rpy2
+  - version_information
+  - rise
+  - ipyleaflet
+  
