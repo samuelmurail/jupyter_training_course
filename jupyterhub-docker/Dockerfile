@@ -1,9 +1,6 @@
 FROM jupyterhub/jupyterhub:latest
 LABEL author="Sjoerd de Vries <sjoerd.de-vries@inserm.fr>"
 USER root
-COPY course-copy/ /course
-COPY .create_users.sh /root/.create_users.sh
-RUN /root/.create_users.sh && rm /root/.create_users.sh
 RUN conda install \
   -c conda-forge \
   gcc_linux-64=7.3 \
@@ -24,6 +21,9 @@ RUN conda install --override-channels \
   -c conda-forge \
   pandas \
   matplotlib \
+  cython \
+  cffi \
+  rust \
   seaborn \
   plotly \
   bokeh \
@@ -39,6 +39,10 @@ RUN conda install --override-channels \
   ipyleaflet  \
   tzlocal \
   geopandas \
+  xlrd \
   nglview
-RUN conda install -c conda-forge xeus-cling
+RUN conda install  --override-channels -c conda-forge xeus-cling
 RUN jupyter nbextension enable --py --sys-prefix ipyleaflet && jupyter nbextension enable --py --sys-prefix nglview
+COPY course-copy/ /course
+COPY .create_users.sh /root/.create_users.sh
+RUN /root/.create_users.sh && rm /root/.create_users.sh
