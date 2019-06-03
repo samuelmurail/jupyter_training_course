@@ -4,13 +4,17 @@ USER root
 COPY course-copy/ /course
 COPY .create_users.sh /root/.create_users.sh
 RUN /root/.create_users.sh && rm /root/.create_users.sh
-RUN apt-get update && apt-get -y install gcc gfortran libgfortran3
-RUN conda install \   
+RUN conda install \
   -c conda-forge \
   -c anaconda \
-  \
-  python \
-  notebook \
+  gcc_linux-64=7.3\
+  gfortran_linux-64=7.3 \
+  gxx_linux-64=7.3\
+  python=3.6\
+  ipython=7.5\
+  r-base=3.5\
+  r-essentials=3.5\
+  notebook=5.7\
   numpy \
   pandas \
   matplotlib \
@@ -31,8 +35,3 @@ RUN conda install \
   geopandas \
   nglview \
   && jupyter nbextension enable --py --sys-prefix ipyleaflet
-RUN conda install \   
-  -c conda-forge \
-  -c anaconda \
-  \
-  r-essentials \
