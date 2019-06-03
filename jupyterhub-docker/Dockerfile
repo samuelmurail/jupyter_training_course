@@ -4,11 +4,13 @@ USER root
 COPY course-copy/ /course
 COPY .create_users.sh /root/.create_users.sh
 RUN /root/.create_users.sh && rm /root/.create_users.sh
-RUN apt-get update && apt-get -y install gcc gfortran r-base
+RUN apt-get update && apt-get -y install gcc gfortran libgfortran3
 RUN conda install \   
   -c conda-forge \
   -c anaconda \
   \
+  python \
+  r-essentials \
   notebook \
   numpy \
   pandas \

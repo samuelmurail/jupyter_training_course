@@ -1,3 +1,3 @@
 gcc
 gfortran
-r-base
+libgfortran3

@@ -4,6 +4,7 @@ channels:
   - anaconda
 dependencies:
   - python
+  - r-essentials
   - notebook
   - numpy
   - pandas
