@@ -3,7 +3,6 @@ channels:
     - conda-forge
 dependencies:
     - numpy=1.16
-    - pyqt=5.9
     - ipython=7.5
     - notebook=5.7
     - jupyter=1.0
@@ -19,11 +18,8 @@ dependencies:
     - vega
     - networkx
     - simplegeneric
-    - rpy2
     - version_information
     - rise
-    - ipyleaflet 
     - tzlocal
-    - geopandas
     - nglview
     - xeus-cling
