@@ -10,7 +10,6 @@ RUN conda install \
   -c anaconda \
   \
   python \
-  r-essentials \
   notebook \
   numpy \
   pandas \
@@ -32,4 +31,8 @@ RUN conda install \
   geopandas \
   nglview \
   && jupyter nbextension enable --py --sys-prefix ipyleaflet
-  
+RUN conda install \   
+  -c conda-forge \
+  -c anaconda \
+  \
+  r-essentials \
