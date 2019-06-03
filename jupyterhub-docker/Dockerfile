@@ -39,6 +39,6 @@ RUN conda install --override-channels \
   ipyleaflet  \
   tzlocal \
   geopandas \
-  nglview \
-  && jupyter nbextension enable --py --sys-prefix ipyleaflet
+  nglview
 RUN conda install -c conda-forge xeus-cling
+RUN jupyter nbextension enable --py --sys-prefix ipyleaflet && jupyter nbextension enable --py --sys-prefix nglview
