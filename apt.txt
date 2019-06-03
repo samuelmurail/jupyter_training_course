@@ -1,3 +1,0 @@
-gcc
-gfortran
-libgfortran3

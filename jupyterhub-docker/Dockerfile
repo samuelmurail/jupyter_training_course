@@ -6,16 +6,22 @@ COPY .create_users.sh /root/.create_users.sh
 RUN /root/.create_users.sh && rm /root/.create_users.sh
 RUN conda install \
   -c conda-forge \
-  -c anaconda \
-  gcc_linux-64=7.3\
+  gcc_linux-64=7.3 \
   gfortran_linux-64=7.3 \
-  gxx_linux-64=7.3\
-  python=3.6\
-  ipython=7.5\
-  r-base=3.5\
-  r-essentials=3.5\
-  notebook=5.7\
-  numpy \
+  gxx_linux-64=7.3 \
+  python=3.6 \
+  r-base=3.5 \
+  r-essentials=3.5
+RUN conda install --override-channels \
+  -c conda-forge \
+  numpy=1.16 \
+  pyqt=5.9 \
+  ipython=7.5 \
+  notebook=5.7 \
+  jupyter=1.0 \
+  scipy=1.3
+RUN conda install --override-channels \
+  -c conda-forge \
   pandas \
   matplotlib \
   seaborn \
@@ -35,3 +41,4 @@ RUN conda install \
   geopandas \
   nglview \
   && jupyter nbextension enable --py --sys-prefix ipyleaflet
+RUN conda install -c conda-forge xeus-cling
