@@ -22,6 +22,8 @@ RUN conda install --override-channels \
   pandas \
   matplotlib \
   cython \
+  numba \
+  numexpr \
   cffi \
   rust \
   seaborn \
@@ -46,3 +48,4 @@ RUN jupyter nbextension enable --py --sys-prefix ipyleaflet && jupyter nbextensi
 COPY course-copy/ /course
 COPY .create_users.sh /root/.create_users.sh
 RUN /root/.create_users.sh && rm /root/.create_users.sh
+RUN apt-get update && apt-get -y install gcc g++
