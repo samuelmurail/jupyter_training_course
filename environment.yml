@@ -2,12 +2,6 @@ name:  rpbs-jupyterhub-course
 channels:
     - conda-forge
 dependencies:
-    - gcc_linux-64=7.3
-    - gfortran_linux-64=7.3
-    - gxx_linux-64=7.3
-    - python=3.6
-    - r-base=3.5
-    - r-essentials=3.5
     - numpy=1.16
     - pyqt=5.9
     - ipython=7.5
