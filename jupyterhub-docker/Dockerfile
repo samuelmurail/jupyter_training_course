@@ -45,8 +45,7 @@ RUN conda install --override-channels \
   nglview
 RUN conda install  --override-channels -c conda-forge xeus-cling
 RUN jupyter nbextension enable --py --sys-prefix ipyleaflet && jupyter nbextension enable --py --sys-prefix nglview
-RUN apt-get update && apt-get -y install gcc g++
-RUN pip install numba numexpr cffi_magic
-COPY course-copy/ /course
+RUN apt-get update && apt-get -y install gcc g++ libgfortran3
+RUN pip install numba numexpr cffi_magic metakernel calysto ipyparallel
 COPY .create_users.sh /root/.create_users.sh
 RUN /root/.create_users.sh && rm /root/.create_users.sh
